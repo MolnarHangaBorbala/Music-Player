@@ -1,0 +1,276 @@
+body {
+    background-color: beige;
+    font-family: monospace;
+}
+
+.navbar {
+    height: 50px;
+    background-color: black;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    position: fixed;
+    align-items: right;
+}
+
+.navbar-brand {
+    background-color: transparent;
+    border: transparent;
+}
+
+#searchId {
+    float: right;
+    padding: 10px;
+}
+
+#small {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(177, 177, 177);
+}
+
+#big {
+    font-size: 35px;
+    color: aliceblue;
+}
+
+#navbar-aID {
+    text-decoration: none;
+}
+
+#navbarContainer {
+    width: fit-content;
+    padding: 5px;
+    float: left;
+    border-radius: 10px;
+}
+
+#navbarContainer:hover {
+    background-color: rgba(255, 255, 255, 0.199);
+}
+
+#inputId {
+    height: 35px;
+    width: 250px;
+    border-radius: 10px;
+    padding: 2px 10px;
+    background-color: transparent;
+    color: aliceblue;
+    border: 1px aliceblue solid;
+}
+
+#inputId:active,
+#searchBtnId:active {
+    background-color: rgba(97, 97, 97, 0.507);
+}
+
+#results {
+    float: right;
+    background-color: rgba(0, 0, 0, 0.459);
+    height: 500px;
+    width: 300px;
+    position: absolute;
+    padding: 10px;
+    display: none;
+    color: aliceblue;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    margin-top: 15px;
+}
+
+#searchBtnId {
+    height: 35px;
+    width: 80px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: transparent;
+    color: aliceblue;
+    border-color: aliceblue;
+}
+
+.track {
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.555);
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.trackDiv1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.247);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.trackDiv1:hover {
+    background-color: rgba(49, 49, 49, 0.247);
+}
+
+.trackLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.trackLeft img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid black;
+    object-fit: cover;
+}
+
+.trackRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trackRight strong {
+    font-size: 17px;
+    color: white;
+}
+
+.trackRight em {
+    font-size: 14px;
+    color: rgb(200, 200, 200);
+}
+
+.Lnavbar {
+    height: 70px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    position: fixed;
+    align-items: right;
+    background-color: black;
+    color: aliceblue
+}
+
+.custom-player {
+    height: 40px;
+    width: 580px;
+    background-color: rgba(128, 128, 128, 0.541);
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playPauseBtn {
+    border-radius: 15px;
+    height: 40px;
+    width: 40px;
+    color: aliceblue;
+    background-color: Black;
+    border: 2px aliceblue solid;
+    font-size: large;
+    margin-right: 10px;
+}
+
+#playPauseBtn:hover {
+    color: rgb(192, 192, 192);
+}
+
+#seekBar {
+    width: 300px;
+    margin: 0px 10px;
+}
+
+#trackTime,
+#currentTime {
+    color: aliceblue;
+    font-size: 20px;
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#nowPlaying {
+    margin-left: 30px;
+    float: left;
+    font-size: 20px;
+    padding: 15px 10px 15px 10px;
+    background-color: rgba(128, 128, 128, 0.541);
+    border-radius: 20px;
+}
+
+#nowPlaying em {
+    font-size: 18px;
+}
+
+#nowPlaying b {
+    font-size: 17px;
+}
+
+#scrollText {
+    margin: 5px;
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-110%);
+    }
+}
+
+#scrollCont:hover #scrollText {
+    animation-play-state: paused;
+}
+
+#scrollCont {
+    float: right;
+    margin-left: 10px;
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
+    width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 1px solid #ccc;
+    position: relative;
+    height: 30px;
+}
+
+#vinylId {
+    height: 850px;
+    margin-left: -400px;
+    animation: spin 5s linear infinite;
+    animation-play-state: paused;
+    filter: drop-shadow(0px 0px 26px #000000);
+}
+
+#vinylDiv {
+    position: fixed;
+    width: 850px;
+    height: 850px;
+    z-index: -1000;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#volumeBar {
+    float: right;
+    width: 70px;
+    margin-top: 10px;
+}
