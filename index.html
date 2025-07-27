@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/indexstyle.css">
+    <title>Music-Player</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div id="navbarContainer">
+            <a href="index.html" id="navbar-aID">
+                <button class="navbar-brand" id="big">M<span id="small">usic</span>P<span
+                        id="small">layer</span></button>
+            </a>
+        </div>
+        <div id="searchId">
+            <input id="inputId" type="search" placeholder="Search" aria-label="Search">
+            <div id="results"></div>
+            <button id="searchBtnId" type="submit">Search</button>
+        </div>
+    </div>
+    <div id="vinylDiv">
+        <img id="vinylId" src="img/vinyl.png" alt="vinyl">
+    </div>
+    <div class="Lnavbar">
+        <div id="nowPlaying">
+            <b>Now Playing:</b>
+            <div id="scrollCont">
+            </div>
+        </div>
+        <div class="custom-player">
+            <button id="playPauseBtn" disabled>▶</button>
+            <span id="currentTime">0:00</span>
+            <input type="range" id="seekBar" value="0" min="0" max="100">
+            <span id="trackTime">0:00</span>
+            <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+        </div>
+        <audio id="audioPlayer"></audio>
+    </div>
+
+    <script src="js/indexscr.js"></script>
+</body>
+
+</html>
