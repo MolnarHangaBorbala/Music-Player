@@ -1,3 +1,10 @@
+html {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 body {
     background-color: beige;
     font-family: monospace;
@@ -271,10 +278,27 @@ body {
 }
 
 #vinylDiv {
+    float: left;
     position: fixed;
     width: 850px;
     height: 850px;
-    z-index: -1000;
+    z-index: -10;
+}
+
+#vinylImg {
+    height: 282px;
+    width: 281px;
+    background-color: transparent;
+    z-index: -1;
+    float: left;
+    position: fixed;
+    margin-top: 283px;
+    margin-left: -117px;
+    border-radius: 300px;
+    border: 2px rgb(0, 0, 0) solid;
+    animation: spin 5s linear infinite;
+    animation-play-state: paused;
+    filter: drop-shadow(0px 0px 26px #000000);
 }
 
 @keyframes spin {
@@ -287,10 +311,12 @@ body {
     }
 }
 
+#volumeBar.vertical {
+    writing-mode: vertical-lr;
+    direction: rtl;
+}
+
 #volumeBar {
-    writing-mode: bt-lr;
-    -webkit-appearance: slider-vertical;
-    appearance: slider-vertical;
     width: 8px;
     height: 45px;
     margin-left: 6px;
@@ -304,4 +330,47 @@ body {
     padding: 4px;
     border-radius: 10px;
     border: 1px aliceblue solid;
+}
+
+.lyricsDiv {
+    background-color: rgb(211, 211, 191);
+    width: 450px;
+    height: 550px;
+    float: left;
+    margin-left: 710px;
+    margin-top: 150px;
+    border-radius: 50px;
+    filter: drop-shadow(0px 0px 20px #0000006e);
+}
+
+#lyricsBox {
+    height: 500px;
+    width: 400px;
+    margin: 25px;
+    border-radius: 30px;
+    background-color: rgb(211, 211, 191);
+    text-align: left;
+    overflow: hidden;
+}
+
+#lyricsBox:hover #lyricsText {
+    animation-play-state: paused;
+}
+
+#lyricsBox p {
+    float: left;
+    margin: 20px 0px 0px 20px;
+    font-size: 20px;
+    animation: scroll-up 30s linear infinite;
+    margin-top: 10px;
+}
+
+@keyframes scroll-up {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-160%);
+    }
 }
