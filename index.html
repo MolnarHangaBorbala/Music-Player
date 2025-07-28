@@ -12,7 +12,7 @@
 <body>
     <div class="navbar">
         <div id="navbarContainer">
-            <a href="index.html" id="navbar-aID">
+            <a href="index.html" id="navbar-aID" draggable="false">
                 <button class="navbar-brand" id="big">M<span id="small">usic</span>P<span
                         id="small">layer</span></button>
             </a>
@@ -24,7 +24,13 @@
         </div>
     </div>
     <div id="vinylDiv">
-        <img id="vinylId" src="img/vinyl.png" alt="vinyl">
+        <img draggable="false" id="vinylId" src="img/vinyl.png" alt="vinyl">
+    </div>
+    <div id="vinylImg"></div>
+    <div class="lyricsDiv">
+        <div id="lyricsBox">
+            <p id="lyricsText">Lyrics...</p>
+        </div>
     </div>
     <div class="Lnavbar">
         <div id="nowPlaying">
@@ -40,7 +46,7 @@
             </div>
             <span id="trackTime">0:00</span>
             <div class="volume-control">
-                <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+                <input type="range" id="volumeBar" class="vertical" min="0" max="1" step="0.01" value="1">
             </div>
             <audio id="audioPlayer"></audio>
         </div>
