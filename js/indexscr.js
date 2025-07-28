@@ -10,6 +10,7 @@ const seekBar = document.getElementById('seekBar');
 const currentTime = document.getElementById('currentTime');
 const trackTime = document.getElementById('trackTime');
 const vinyl = document.getElementById('vinylId');
+const vinylImg = document.getElementById('vinylImg');
 const volumeBar = document.getElementById('volumeBar');
 
 volumeBar.addEventListener('input', () => {
@@ -21,16 +22,19 @@ playPauseBtn.addEventListener('click', () => {
         audio.play();
         playPauseBtn.textContent = '⏸';
         vinyl.style.animationPlayState = 'running';
+        vinylImg.style.animationPlayState = 'running';
     } else {
         audio.pause();
         playPauseBtn.textContent = '▶';
         vinyl.style.animationPlayState = 'paused';
+        vinylImg.style.animationPlayState = 'paused';
     }
 });
 
 audio.addEventListener('ended', () => {
     playPauseBtn.textContent = '▶';
     vinyl.style.animationPlayState = 'paused';
+    vinylImg.style.animationPlayState = 'paused';
 });
 
 // Update play/pause button when audio ends
@@ -101,9 +105,15 @@ results.addEventListener('click', e => {
     playPauseBtn.textContent = '⏸';
     playPauseBtn.disabled = false;
     vinyl.style.animationPlayState = 'running';
+    vinylImg.style.animationPlayState = 'running';
 
     const target = e.target.closest('.trackDiv1');
     if (!target) return;
+
+    const imageElement = target.querySelector('img');
+    if (imageElement) {
+        vinylImg.style.backgroundImage = `url("${imageElement.src}")`;
+    }
 
     const audioUrl = target.dataset.url;
     const title = target.dataset.name;
@@ -130,4 +140,35 @@ results.addEventListener('click', e => {
             text.style.paddingLeft = '100%';
         }
     }, 100);
+
+    fetchLyrics(artist, title);
 });
+
+function fetchLyrics(artist, title) {
+    const apiURL = `https://api.jamendo.com/v3.0/tracks/?client_id=${clientId}&format=json&include=lyrics&namesearch=${encodeURIComponent(title)}&artist_name=${encodeURIComponent(artist)}&limit=1`;
+
+    fetch(apiURL)
+        .then(res => res.json())
+        .then(data => {
+            const lyricsText = document.getElementById('lyricsText');
+            if (data.results.length > 0 && data.results[0].lyrics) {
+                lyricsText.innerText = data.results[0].lyrics;
+                lyricsText.style.marginTop = '125%';
+                lyricsText.style.animation = 'scroll-up 30s linear infinite';
+                lyricsText.style.animationPlayState = 'running';
+            } else {
+                lyricsText.innerText = 'No lyrics found.';
+                lyricsText.style.marginTop = '10px';
+                lyricsText.style.animation = 'none';
+                lyricsText.style.animationPlayState = 'paused';
+            }
+        })
+        .catch(err => {
+            console.error('Jamendo lyrics fetch error:', err);
+            const lyricsText = document.getElementById('lyricsText');
+            lyricsText.innerText = 'Error fetching lyrics.';
+            lyricsText.style.marginTop = '10px';
+        });
+
+    console.log('Fetching lyrics from Jamendo for:', title, 'by', artist);
+}
