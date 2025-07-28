@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/indexstyle.css">
+    <link rel="shortcut icon" href="img/icon/vinyl-icon.png" type="image/x-icon">
     <title>Music-Player</title>
 </head>
 
@@ -34,14 +35,17 @@
         <div class="custom-player">
             <button id="playPauseBtn" disabled>▶</button>
             <span id="currentTime">0:00</span>
-            <input type="range" id="seekBar" value="0" min="0" max="100">
+            <div class="time-control">
+                <input type="range" id="seekBar" value="0" min="0" max="100">
+            </div>
             <span id="trackTime">0:00</span>
-            <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+            <div class="volume-control">
+                <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+            </div>
+            <audio id="audioPlayer"></audio>
         </div>
-        <audio id="audioPlayer"></audio>
-    </div>
 
-    <script src="js/indexscr.js"></script>
+        <script src="js/indexscr.js"></script>
 </body>
 
 </html>
