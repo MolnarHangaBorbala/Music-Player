@@ -314,6 +314,8 @@ body {
 #volumeBar.vertical {
     writing-mode: vertical-lr;
     direction: rtl;
+    -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
 }
 
 #volumeBar {
@@ -329,7 +331,7 @@ body {
     width: 20px;
     padding: 4px;
     border-radius: 10px;
-    border: 1px aliceblue solid;
+    border: 1px solid aliceblue;
 }
 
 .lyricsDiv {
