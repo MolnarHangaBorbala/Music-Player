@@ -1,6 +1,6 @@
 # 🎧 Zenelejátszó – Music-Player
 
-[![Live on Netlify](https://img.shields.io/badge/Live_on-Netlify-brightgreen?style=for-the-badge&logo=netlify&logoColor=white)]([https://rock-paper-scissors-pr0ject.netlify.app/](https://music-player-par0ject.netlify.app))
+[![Live on Netlify](https://img.shields.io/badge/Live_on-Netlify-brightgreen?style=for-the-badge&logo=netlify&logoColor=white)]([https://music-player-par0ject.netlify.app](https://music-player-par0ject.netlify.app))
 
 Egy letisztult, mégis látványos zenelejátszó webalkalmazás, amely lehetővé teszi zenék keresését és lejátszását a [Jamendo API](https://developer.jamendo.com/) segítségével. A lejátszóban helyet kapott egy egyedi vinyl animáció, valós idejű dalszöveg-megjelenítés, valamint teljes mértékben testreszabható hangerő- és időcsúszka is.
 
