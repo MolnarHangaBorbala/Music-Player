@@ -74,11 +74,7 @@ Egy letisztult, mégis látványos zenelejátszó webalkalmazás, amely lehetőv
 - Animációk `@keyframes` CSS-ben
 - Teljesen frontend alapú, nincs backend szükséglet
 
-## 📸 Képernyőképek (javasolt)
-
-> *(Ide szúrj be pár képet a lejátszóról működés közben: keresés, lejátszás, dalszöveg, stb.)*
-
 ## 🧑‍💻 Készítette
 
-- Név: [Ide írd be magad]
-- GitHub: [@githubfelhasználóneved](https://github.com/te)
+- Név: Molnár Hanga Borbála (aka _zendev)
+- GitHub: [@MolnarHangaBorbala](https://github.com/MolnarHangaBorbala)
